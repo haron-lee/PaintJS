@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "variable.css";
 body {
   background-color: rgb(219, 219, 219);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -11,14 +12,44 @@ body {
 
 .canvas {
   width: 700px;
-  height: 750px;
+  height: 700px;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .controls {
-  margin-top: 80px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls__range {
+  margin-bottom: 20px;
+}
+
+.controls__btn button {
+  all: unset;
+  color: rgb(114, 114, 114);
+  background-color: white;
+  cursor: pointer;
+  padding: 5px 0;
+  width: 80px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.controls__btn button:active {
+  transform: scale(0.98);
+}
+
+.controls .controls__btn {
+  margin-bottom: 20px;
 }
 
 .controls .controls__colors {
@@ -29,6 +60,6 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   cursor: pointer;
 }
