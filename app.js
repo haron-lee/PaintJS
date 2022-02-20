@@ -1,36 +1,41 @@
 const canvas = document.getElementById("jsCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 700;
+canvas.height = 700;
+
+ctx.strokeStyle = "#2c2c2c";
+ctx.lineWidth = 2.5;
+
 let painting = false;
+
+function startPainting() {
+  painting = true;
+}
 
 function stopPainting() {
   painting = false;
 }
 
 function onMouseMove(event) {
-  // mousemove event에서 client X,Y는 윈도우 전체의 범위
-  // mousemove event에서 offset X, Y는 canvas 안에서의 범위
   const x = event.offsetX;
   const y = event.offsetY;
+  if (!painting) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  } else {
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
 }
 
 function onMouseDown(event) {
   painting = true;
 }
 
-function onMouseUp(event) {
-  stopPainting();
-}
-
-// leave는 mouse event가 stop하는 구간이라 stopPainting 함수만 사용
-// function onMouseLeave(event) {
-//   painting = false;
-// }
-
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
-  // mousedown은 click event
-  canvas.addEventListener("mousedown", onmousedown);
-  // mouseup은 click 후 손을 떼었을 때 event
-  canvas.addEventListener("mouseup", onMouseUp);
-  // canvas에서 leave 했을 때 event
+  canvas.addEventListener("mousedown", startPainting);
+  canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
 }
