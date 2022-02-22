@@ -19,7 +19,7 @@ body {
 }
 
 .controls {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@ body {
 
 .controls__btn button {
   all: unset;
-  color: rgb(114, 114, 114);
+  color: rgb(172, 172, 172);
   background-color: white;
   cursor: pointer;
   padding: 5px 0;
@@ -42,6 +42,10 @@ body {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
+}
+
+.controls__btn button:hover {
+  color: rgb(129, 129, 129);
 }
 
 .controls__btn button:active {
@@ -62,4 +66,5 @@ body {
   border-radius: 50%;
   box-shadow: var(--shadow);
   cursor: pointer;
+  margin-right: 5px;
 }

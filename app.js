@@ -16,7 +16,7 @@ ctx.fillStyle = "white";
 ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
-ctx.lineWidth = 2.5;
+ctx.lineWidth = 4.0;
 
 let painting = false;
 let filling = false;
@@ -55,10 +55,10 @@ function handleRangeChange(event) {
 function handleModeClick() {
   if (filling === true) {
     filling = false;
-    mode.innerText = "Fill";
+    mode.innerText = "Paint";
   } else {
     filling = true;
-    mode.innerText = "Paint";
+    mode.innerText = "Fill";
   }
 }
 
