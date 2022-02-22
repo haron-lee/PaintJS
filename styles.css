@@ -16,6 +16,7 @@ body {
   border-radius: 15px;
   background-color: white;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .controls {
